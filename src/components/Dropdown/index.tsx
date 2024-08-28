@@ -435,7 +435,6 @@ const DropdownComponent: <T>(
     );
 
     const _renderDropdown = () => {
-      const isSelected = currentValue && _get(currentValue, valueField);
       return (
         <TouchableWithoutFeedback
           testID={testID}
@@ -446,21 +445,6 @@ const DropdownComponent: <T>(
           <View style={styles.dropdown}>
             {renderLeftIcon?.(visible)}
             {__renderValue()}
-            {!renderValue && (
-              <Text
-                style={[
-                  styles.textItem,
-                  isSelected !== null ? selectedTextStyle : placeholderStyle,
-                  font(),
-                ]}
-                {...selectedTextProps}
-              >
-                {isSelected !== null
-                  ? _get(currentValue, labelField)
-                  : placeholder}
-              </Text>
-            )}
-
             {renderRightIcon ? (
               renderRightIcon(visible)
             ) : (
@@ -496,7 +480,6 @@ const DropdownComponent: <T>(
         </Text>
       );
     };
-
     const _renderItem = useCallback(
       ({ item, index }: { item: any; index: number }) => {
         const isSelected = currentValue && _get(currentValue, valueField);
