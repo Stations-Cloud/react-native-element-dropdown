@@ -179,7 +179,7 @@ const DropdownComponent: <T>(
           onBlur();
         }
       }
-    }, [disable, onBlur]);
+    }, [disable, awaysOpen, onBlur]);
 
     const font = useCallback(() => {
       if (fontFamily) {
@@ -317,7 +317,7 @@ const DropdownComponent: <T>(
         }
 
         _measure();
-        !awaysOpen && setVisible(true);
+        !awaysOpen && setVisible(visibleStatus);
         const filterData = excludeData(data);
         setListData(filterData);
 
