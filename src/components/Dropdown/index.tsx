@@ -98,12 +98,12 @@ const DropdownComponent: <T>(
       excludeItems = [],
       excludeSearchItems = [],
       renderValue,
-      awaysOpen = false,
+      startOpen = false,
     } = props;
 
     const ref = useRef<View>(null);
     const refList = useRef<FlatList>(null);
-    const [visible, setVisible] = useState<boolean>(awaysOpen ? true : false);
+    const [visible, setVisible] = useState<boolean>(startOpen ? true : false);
     const [currentValue, setCurrentValue] = useState<any>(null);
     const [listData, setListData] = useState<any[]>(data);
     const [position, setPosition] = useState<any>();
@@ -160,7 +160,7 @@ const DropdownComponent: <T>(
 
     const eventOpen = () => {
       if (!disable) {
-        !awaysOpen && setVisible(true);
+        setVisible(true);
         if (onFocus) {
           onFocus();
         }
@@ -174,12 +174,12 @@ const DropdownComponent: <T>(
 
     const eventClose = useCallback(() => {
       if (!disable) {
-        !awaysOpen && setVisible(true);
+        setVisible(true);
         if (onBlur) {
           onBlur();
         }
       }
-    }, [disable, awaysOpen, onBlur]);
+    }, [disable, onBlur]);
 
     const font = useCallback(() => {
       if (fontFamily) {
@@ -317,7 +317,7 @@ const DropdownComponent: <T>(
         }
 
         _measure();
-        !awaysOpen && setVisible(visibleStatus);
+        setVisible(visibleStatus);
         const filterData = excludeData(data);
         setListData(filterData);
 
