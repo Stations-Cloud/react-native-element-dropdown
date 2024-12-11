@@ -1,6 +1,6 @@
 {
   "name": "@stations/react-native-element-dropdown",
-  "version": "2.12.4",
+  "version": "2.12.5",
   "description": "React Native Element Dropdown is a library that provides a customizable dropdown component for React Native applications.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -97,7 +97,7 @@
   "engines": {
     "node": ">= 16.0.0"
   },
-  "packageManager": "^yarn@1.22.15",
+  "packageManager": "yarn@1.22.22",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
