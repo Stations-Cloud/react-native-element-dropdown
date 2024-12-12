@@ -70,5 +70,4 @@ export interface DropdownProps<T> {
   onChangeText?: (search: string) => void;
   onConfirmSelectItem?: (item: T) => void;
   renderValue?: (item: T) => JSX.Element | null | undefined;
-  startOpen?: boolean;
 }
